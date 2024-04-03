@@ -27,7 +27,7 @@ export async function POST(request: Request) {
     }
   } catch (error) {
     console.error('Something went wrong:', error);
-    return new Response(JSON.stringify({ message: 'Something went wrong!' }), {
+    return new Response(JSON.stringify({ message: 'Something went wrong!', error: error }), {
       headers: { 'Content-Type': 'application/json' },
       status: 500,
     });
