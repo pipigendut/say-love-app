@@ -99,9 +99,15 @@ const Page: React.FC = () => {
         {
           "from": "447860099299",
           "to": "6281386701218",
-          "messageId": "99093650-44fc-44b7-829a-ade94fa17515",
+          "messageId": "99093650-44fc-44b7-829a-ade94fa17525",
           "content": {
-            "text": `ada feedback terbaru, cepat check bar. answer: ${answer}, reason: ${reason}`
+            "templateName": "message_test",
+            "templateData": {
+                "body": {
+                    "placeholders": ["akbar"]
+                }
+            },
+            "language": "en"
           }
         }
       ]
