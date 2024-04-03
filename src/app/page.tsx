@@ -69,7 +69,7 @@ const Page: React.FC = () => {
       setIsOpen(false);
       setShowThankYouModal(true);
       try {
-        sendMessage()
+        // sendMessage()
       } catch (error) {
         console.error('Error send wa:', error);
       }
@@ -148,8 +148,17 @@ const Page: React.FC = () => {
         <button className="button" onClick={handleYesClick}>Mau....</button>
         <button className="button" onClick={handleNoClick}>Engga dulu...</button>
       </div>
-      <div className="flex justify-center m-8">
+      <div className="flex justify-center mt-8">
         <img src="https://media1.tenor.com/m/x0-wEQe6izQAAAAd/attention-seeking-attention-please.gif" alt="Tolong Ampun" height="400" />
+      </div>
+      <div className="flex justify-center pt-8">
+        <span>oiya jawabnya engga perlu engga enakan ya, aku juga udah nothing to lose dan pasrah kok</span>
+      </div>
+      <div className="flex justify-center">
+        <span>dan aku sadar aku belum kenal kamu lama dan belum ada impact kekamu juga</span>
+      </div>
+      <div className="flex justify-center">
+        <span>apapun jawaban kamu sangat berarti bagi aku</span>
       </div>
       <div className="flex justify-center">
         {showForm && (
@@ -199,7 +208,7 @@ const Modal: React.FC<{ isOpen: boolean; isLoading: boolean; onClose: () => void
                 <h3 className="text-lg leading-6 font-medium text-gray-900" id="modal-title">Kamu yakin engga?</h3>
                 <div className="mt-2">
                   <p className="text-sm text-gray-500">
-                    Yaudah kalau kamu sudah yakin klik tombol yes.
+                    Yaudah kalau kamu udah yakin klik tombol yes.
                   </p>
                 </div>
               </div>
@@ -239,7 +248,7 @@ const ThankYouModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                 <h3 className="text-lg leading-6 font-medium text-gray-900" id="modal-title">Udah kekirim!</h3>
                 <div className="mt-2">
                   <p className="text-sm text-gray-500">
-                    Makasih ya udah dijawab, jawaban kamu sangat berarti bagi aku. nanti aku akan cek
+                    Makasih ya udah dijawab.
                     kamu bisa berubah pikiran dengan submit formnya lagi ya...
                   </p>
                 </div>
