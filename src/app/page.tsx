@@ -155,7 +155,7 @@ const Page: React.FC = () => {
     >
       <ToastContainer />
       <div className="flex justify-center mb-4 pt-8">
-        <span>Mau engga kita ldr-an press ?</span>
+        <span className='font-bold'>Mau engga kita ldr-an press ?</span>
       </div>
       <div className="flex justify-center">
         <button className="button" onClick={handleYesClick}>Mau....</button>
@@ -165,13 +165,13 @@ const Page: React.FC = () => {
         <img src="https://media1.tenor.com/m/x0-wEQe6izQAAAAd/attention-seeking-attention-please.gif" alt="Tolong Ampun" height="400" />
       </div>
       <div className="flex justify-center pt-8">
-        <span className='text-center stroke-font'>oiya jawabnya engga perlu engga enakan ya, aku juga udah nothing to lose dan pasrah kok</span>
+        <span className='text-center font-bold'>oiya jawabnya engga perlu engga enakan ya, aku juga udah nothing to lose dan pasrah kok</span>
       </div>
       <div className="flex justify-center">
-        <span className='text-center stroke-font'>dan aku sadar aku belum kenal kamu lama dan belum ada impact kekamu juga</span>
+        <span className='text-center font-bold'>dan aku sadar aku belum kenal kamu lama dan belum ada impact kekamu juga</span>
       </div>
       <div className="flex justify-center">
-        <span className='text-center stroke-font'>apapun jawaban kamu sangat berarti bagi aku</span>
+        <span className='text-center font-bold'>apapun jawaban kamu sangat berarti bagi aku</span>
       </div>
       <div className="flex justify-center">
         {showForm && (

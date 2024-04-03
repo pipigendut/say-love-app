@@ -32,11 +32,6 @@ body {
   }
 }
 
-.stroke-font {
-  -webkit-text-stroke-width: 0.8px;
-  -webkit-text-stroke-color: black;
-}
-
 .button {
   background-color: #007bff;
   color: white;
