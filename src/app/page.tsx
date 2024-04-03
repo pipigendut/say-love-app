@@ -1,9 +1,10 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
 const Page: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
   const [showForm, setShowForm] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [showThankYouModal, setShowThankYouModal] = useState<boolean>(false);
@@ -12,16 +13,28 @@ const Page: React.FC = () => {
   const [reason, setReason] = useState<string>('');
   const [backgroundImage, setBackgroundImage] = useState<string>('');
 
+  useEffect(() => {
+    scrollToBottom();
+  }, [showForm]); // Perbarui scroll saat showForm berubah
+
+  const scrollToBottom = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const handleYesClick = () => {
     setShowForm(true);
     setAnswer('Mau');
     setBackgroundImage("url('https://media1.tenor.com/m/j9nwwKpnx5wAAAAd/cap.gif')");
+    scrollToBottom();
   };
 
   const handleNoClick = () => {
     setShowForm(true);
     setAnswer('Tidak');
     setBackgroundImage("url('https://media1.tenor.com/m/2E6SQ6csxQsAAAAC/fire-spongebob.gif')");
+    scrollToBottom();
   };
 
   const handleOpenModal = (e: React.FormEvent<HTMLFormElement>) => {
@@ -152,13 +165,13 @@ const Page: React.FC = () => {
         <img src="https://media1.tenor.com/m/x0-wEQe6izQAAAAd/attention-seeking-attention-please.gif" alt="Tolong Ampun" height="400" />
       </div>
       <div className="flex justify-center pt-8">
-        <span>oiya jawabnya engga perlu engga enakan ya, aku juga udah nothing to lose dan pasrah kok</span>
+        <span className='text-center stroke-font'>oiya jawabnya engga perlu engga enakan ya, aku juga udah nothing to lose dan pasrah kok</span>
       </div>
       <div className="flex justify-center">
-        <span>dan aku sadar aku belum kenal kamu lama dan belum ada impact kekamu juga</span>
+        <span className='text-center stroke-font'>dan aku sadar aku belum kenal kamu lama dan belum ada impact kekamu juga</span>
       </div>
       <div className="flex justify-center">
-        <span>apapun jawaban kamu sangat berarti bagi aku</span>
+        <span className='text-center stroke-font'>apapun jawaban kamu sangat berarti bagi aku</span>
       </div>
       <div className="flex justify-center">
         {showForm && (
@@ -182,6 +195,7 @@ const Page: React.FC = () => {
       {showThankYouModal && (
         <ThankYouModal onClose={handleThankYouModalClose} />
       )}
+      <div ref={scrollRef}></div>
     </div>
   );
 };
