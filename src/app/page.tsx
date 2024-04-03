@@ -69,7 +69,7 @@ const Page: React.FC = () => {
       setIsOpen(false);
       setShowThankYouModal(true);
       try {
-        // sendMessage()
+        sendMessage()
       } catch (error) {
         console.error('Error send wa:', error);
       }
